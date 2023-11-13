@@ -183,21 +183,32 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
 
     let _gameStartTime, _gameStartDatetime;
 
-    function gameInit() {
-        createjs.Sound.registerSound({
-            src: "./static/music/err.mp3",
-            id: "err"
-        });
-        createjs.Sound.registerSound({
-            src: "./static/music/end.mp3",
-            id: "end"
-        });
-        createjs.Sound.registerSound({
-            src: "./static/music/tap.mp3",
-            id: "tap"
-        });
-        gameRestart();
-    }
+function gameInit() {
+    createjs.Sound.registerSound({
+        src: "./static/music/err.mp3",
+        id: "err"
+    });
+    createjs.Sound.registerSound({
+        src: "./static/music/end.mp3",
+        id: "end"
+    });
+    createjs.Sound.registerSound({
+        src: "./static/music/tap.mp3",
+        id: "tap"
+    });
+    
+    // 注册背景音乐并设置循环
+    createjs.Sound.registerSound({
+        src: "./static/music/bgm.mp3",
+        id: "bgm",
+        loop: -1 // 设置循环次数为无限
+    });
+
+    // 播放背景音乐
+    createjs.Sound.play("bgm");
+
+    gameRestart();
+}
 
     function gameRestart() {
         _gameBBList = [];
