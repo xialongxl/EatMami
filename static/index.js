@@ -199,7 +199,7 @@ function gameInit() {
     
     // 注册背景音乐并设置循环
     createjs.Sound.registerSound({
-        src: "./static/music/Madoka Magica - Credens Justitiam with Lyrics.mp3",
+        src: "./static/music/bgm.mp3",
         id: "bgm",
         loop: -1 // 设置循环次数为无限
     });
